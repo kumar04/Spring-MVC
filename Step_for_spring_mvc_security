@@ -1,0 +1,31 @@
+Q.How to handle spring security
+Ans:
+Step1:configure spring boot maven dependency
+<!-- Spring Security Web -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-web</artifactId>
+    <version>${spring.security.version}</version>
+</dependency>
+ 
+Step2:write websecurity class extends WebSecurityConfigurerAdapter and override cofigureGlobal method,pass AuthenticationManagerBuilder 
+as parameter and make this class as @EnableWebSecurity
+
+ @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+            .inMemoryAuthentication()
+                .withUser("admin").password("nimda").roles("ADMIN");
+    }
+     
+Step3:override configure method and pass HttpSecutiry as parameter and validate inside this method with role
+ @Override
+    protected void configure(HttpSecurity http) throws Exception {
+   
+      http.authorizeRequests()
+        .antMatchers("/").permitAll()
+        .antMatchers("/admin**").access("hasRole('ADMIN')")
+        .and().formLogin();
+       
+      http.csrf().disable();
+    }   
