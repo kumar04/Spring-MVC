@@ -1,0 +1,21 @@
+1. What are the scopes available in spring?
+Singleton scope,prototype,requeest,session,global session
+2. What is the difference between request and prototype scope?
+If a scope is set to singleton, the Spring IoC container creates exactly one instance of the object defined by that bean definition. This single instance is stored in a cache of such singleton beans
+In prototype scope, you will have a new instance for each getBean() method called.
+request – Return a single bean instance per HTTP request. 
+3. Why qualifier?
+resolved conflict problem for Auto wired
+4. What is DispatcherServlet?
+The job of the DispatcherServlet is to take an incoming URI and find the right combination of handlers (generally methods on Controller classes) and views (generally JSPs) that combine to form the page or resource that's supposed to be found at that location.
+Q.URL,URI,URN
+A URI can be further classified as a locator, a name, or both. The term "Uniform Resource Locator" (URL) refers to the subset of URIs that, in addition to identifying a resource, provide a means of locating the resource by describing its primary access mechanism (e.g., its network "location"). The term "Uniform Resource Name" (URN) has been used historically to refer to both URIs under the "urn" scheme [RFC2141], which are required to remain globally unique and persistent even when the resource ceases to exist or becomes unavailable, and to any other URI with the properties of a name.
+URI: foo
+URL: http://some.domain.com/foo
+URL: http://some.domain.com:8080/foo
+URL: ftp://some.domain.com/fooURI: foo
+URL: http://some.domain.com/foo
+URL: http://some.domain.com:8080/foo
+URL: ftp://some.domain.com/foo
+5. How many view resolvers are there? 
+InternalResourceViewResolver, ResourceBundleViewResolver and XmlViewResolver,PDFViewResolver 
