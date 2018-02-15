@@ -19,3 +19,24 @@ URL: http://some.domain.com:8080/foo
 URL: ftp://some.domain.com/foo
 5. How many view resolvers are there? 
 InternalResourceViewResolver, ResourceBundleViewResolver and XmlViewResolver,PDFViewResolver 
+6. How to gather data from end user and store in DB?
+command obj
+7. How to integrate hibernate with spring?
+step:
+	create a data source
+	inject data source with abstractsessionfactory
+	inject abstractsessionfactory with hibernateTemplate
+	inject hibernateTemplate with DAO class
+8. Why AOP is required?
+Apply cross cutting logic across the resource
+11. What is the difference between BeanFactory and ApplicationContext?
+ BeanFactory-Does not support the Annotation based dependency Injection.
+ ApplicationContext--Support Annotation based dependency Injection.-@Autowired, @PreDestroy
+ BeanFactory-Does not Support
+ApplicationContext- Application contexts can publish events to beans that are registered as listeners
+BeanFactory-Does not support way to access Message Bundle(internationalization (I18N) 
+ApplicationContext-Support internationalization (I18N) messages.
+BeanFactory-Doesn’t support.
+ApplicationContext-Support  many enterprise services such JNDI access, EJB integration, remoting.
+BeanFactory-By default its support Lazy loading
+ApplicationContext-- its By default support Aggresive loading
